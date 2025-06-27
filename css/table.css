@@ -119,13 +119,13 @@ td:nth-child(9)
 
 .role-play-head:nth-child(2)
 {
-  width: 200px;
+  width: 250px;
 }
 
 .role-play-head:nth-child(3),
 .role-play-head:nth-child(4)
 {
-  width: 135px;
+  width: 300px;
 }
 
 .role-play-head:nth-child(5),
@@ -141,48 +141,7 @@ td:nth-child(9)
 }
 
 
-/* .role-play:nth-child(5),
-.role-play:nth-child(6),
-.role-play:nth-child(7),
-.role-play:nth-child(8),
-.role-play:nth-child(9),
-.role-play:nth-child(10)
-{
-  width: 300px;
-} */
 
-/* .tok-type:nth-child(1), 
-.tok-type:nth-child(2),
-.tok-comp-decouple:nth-child(1)
-{
-      border-right: 1px solid #000;
-} */
-
-/* .tok-name:nth-child(1), 
-.tok-name:nth-child(2), 
-.tok-name:nth-child(3), 
-.tok-name:nth-child(5),
-.ntp-mtp:nth-child(5),
-.ntp-mtp:nth-child(2),
-.ntp-mtp:nth-child(3),
-.ntp-mtp:nth-child(4),
-.spk-aware-head:nth-child(2),
-.spk-aware-head:nth-child(3),
-.spk-aware-head:nth-child(4),
-.spk-aware-head:nth-child(5),
-.spk-aware:nth-child(1),
-.spk-aware:nth-child(3),
-.spk-aware:nth-child(5),
-.spk-aware:nth-child(7),
-.spk-aware-content:nth-child(2),
-.spk-aware-content:nth-child(4),
-.spk-aware-content:nth-child(6),
-.spk-aware-content:nth-child(8),
-.role-play:nth-child(1),
-.role-play:nth-child(4)
-{
-      border-right: 1px solid #000;
-} */
 
 .tok-text,
 .tok-d,

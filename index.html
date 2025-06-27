@@ -11,7 +11,7 @@
 	<link rel="stylesheet" href="css/normalize.css">
 	<link rel="stylesheet" href="css/table.css">
 
-	<title>SLM-DM</title>
+	<title>SLM-Decoupled-MTP</title>
 	<link href="css/bootstrap.min.css" rel="stylesheet">
 
 </head>
@@ -27,20 +27,16 @@
 
 <div class="container pt-5 mt-5 shadow-lg p-5 mb-5 bg-white rounded">
 	<div class="text-center">
-	<!-- <h2 style="display: flex; align-items: center; justify-content: center">
-		<object type="image/svg+xml" data="pics/square-f5.svg" style="width: 72px; height: 72px;"></object>-TTS: <span style="margin-left: 10px;"></span> 
-	</h2> -->
-      <h2>Speech-Language Models with Decoupled Tokenizers and
-Multi-Token Prediction</h2>
+      <h3>Speech-Language Models with Decoupled Tokenizers and
+Multi-Token Prediction</h3>
 		<h5><i>Anonymous Authors</i></h5>
-      <!-- <h5> <a href="https://github.com/SWivid/F5-TTS" target="_blank" rel="noopener noreferrer">Code</a>; <a href="https://arxiv.org/abs/2410.06885" target="_blank" rel="noopener noreferrer">Paper</a> </h5> -->
 	</div>
 	<p><b>Abstract</b> Speech-language models (SLMs) offer a promising path toward unifying speech and text understanding and generation.
 However, challenges remain in achieving effective cross-modal alignment and high-quality speech generation. 
 In this work, we systematically investigate the impact of key components (i.e., speech tokenizers, speech heads, and speaker modeling) on the performance of LLM-centric SLMs.
 We compare coupled, semi-decoupled, and fully decoupled speech tokenizers under a fair SLM framework and find that decoupled tokenization significantly improves alignment and synthesis quality.
 To address the information density mismatch between speech and text, we introduce multi-token prediction (MTP) into SLMs, enabling each hidden state to decode multiple speech tokens.
-This leads to up to <b>12× faster</b> decoding and a substantial drop in <b>Word Error Rate (from 6.07 to 3.01)</b>. 
+This leads to up to <b>12× faster</b> decoding and a substantial <b>drop in Word Error Rate (from 6.07 to 3.01)</b>. 
 Furthermore, we propose a speaker-aware generation paradigm and introduce RoleTriviaQA, a large-scale role-playing knowledge QA benchmark with diverse speaker identities. 
 Experiments demonstrate that our methods enhance both knowledge understanding and speaker consistency. 
 	</p>
@@ -109,7 +105,7 @@ heads, generating multiple tokens in parallel.
 
 <div class="container pt-5 mt-5 shadow-lg p-5 mb-5 bg-white rounded" >
 	<h2 id="tok-comp" style="text-align: center;">SLMs Trained with Different Speech Tokenizers</h2>
-	<p>Comparison of SLMs trained with different kinds of speech tokenizers (<b>Coupled</b>, <b>Semi-decoupled</b>, <b>Decoupled</b>)</p>
+	<p>Comparison of SLMs trained with different kinds of speech tokenizers (<b>Coupled</b>, <b>Semi-decoupled</b>, <b>Decoupled</b>).</p>
 	<!-- <div class="legend-container">
             <div class="legend-item">
                 <div class="legend-box" style="background-color: #e8f5e9;"></div>
@@ -292,50 +288,40 @@ heads, generating multiple tokens in parallel.
 
 			<tr style="background-color: #ffebee;">
 				<td style="vertical-align : middle;text-align: center;" class="tok-s">Bad case</td>
-					<td style="vertical-align : middle;text-align: center;" class="tok-text">Its curtains were of thick and faded tapestry.</td>
+					<td style="vertical-align : middle;text-align: center;" class="tok-text">This new plant takes high tension polyphase current from a water power thirty or forty miles away at Paderno, on the river Adda, flowing from the Apennines; but delivers low tension direct current for distribution to the regular Edison three wire system throughout Milan.</td>
 					<td style="vertical-align : middle;text-align: center;" class="tok-d">
 						<audio controls src="audios/tok-comp/facodec-ntp/case-bad.wav" style="width: 250px;"></audio>
 						<br/>
-						WER: 0.0&emsp;&emsp;UTMOS: 4.37
+						WER: 29.5&emsp;&emsp;UTMOS: 3.36
 					</td>
 					<td style="vertical-align : middle;text-align: center;" class="tok-name">
 						<audio controls src="audios/tok-comp/spt-5l/case-bad.wav" style="width: 225px;"></audio>
 						<br/>
-						WER: 0.0&emsp;&emsp;UTMOS: 3.46
+						WER: 31.8&emsp;&emsp;UTMOS: 3.82
 					</td>
 					</td>
 					<td style="vertical-align : middle;text-align: center;" class="tok-s">
-						<audio controls src="audios/tok-comp/spt-8l/case-bad.wav" style="width: 225px;"></audio>
-						<br/>
-						WER: 12.5&emsp;&emsp;UTMOS: 3.97
+						<p><b>Failed</b></p>
 					</td>
 					<td style="vertical-align : middle;text-align: center;" class="tok-name">
-						<audio controls src="audios/tok-comp/encodec-4l/case-bad.wav" style="width: 225px;"></audio>
-						<br/>
-						WER: 25.0&emsp;&emsp;UTMOS: 3.28
+						<p><b>Failed</b></p>
 					</td>
 					<td style="vertical-align : middle;text-align: center;" class="tok-name">
-						<audio controls src="audios/tok-comp/encodec-8l/case-bad.wav" style="width: 225px;"></audio>
-						<br/>
-						WER: 37.5&emsp;&emsp;UTMOS: 3.69
+						<p><b>Failed</b></p>
 					</td>
 					<!-- <td style="vertical-align : middle;text-align: center;" class="tok-name">
 						<p><b>Failed</b></p>
 					</td> -->
 					<td style="vertical-align : middle;text-align: center;" class="tok-name">
-						<audio controls src="audios/tok-comp/wavtok-v2/case-bad.wav" style="width: 225px;"></audio>
-						<br/>
-						WER: 12.5&emsp;&emsp;UTMOS: 4.20
+						<p><b>Failed</b></p>
 					</td>
 					<td style="vertical-align : middle;text-align: center;" class="tok-name">
 						<audio controls src="audios/tok-comp/stablecodec/case-bad.wav" style="width: 225px;"></audio>
 						<br/>
-						WER: 25.0&emsp;&emsp;UTMOS: 3.90
+						WER: 25.0&emsp;&emsp;UTMOS: 2.90
 					</td>
 					<td style="vertical-align : middle;text-align: center;" class="tok-name">
-						<audio controls src="audios/tok-comp/bigcodec/case-bad.wav" style="width: 225px;"></audio>
-						<br/>
-						WER: 0.0&emsp;&emsp;UTMOS: 4.13
+						<p><b>Failed</b></p>
 					</td>
 			</tr>
 
@@ -350,7 +336,8 @@ heads, generating multiple tokens in parallel.
 <div class="container pt-5 mt-5 shadow-lg p-5 mb-5 bg-white rounded">
 
 	<h2 id="spk-aware-comp" style="text-align: center;">NTP vs. MTP & Speaker-Aware TTS</h2>
-	<p>Comparison of TTS w/ and w/o <b>Multi-Token Prediction (MTP)</b> and <b>Speaker-Aware</b> on SLMs trained with decoupled tokenizers*</p>
+	<!-- <p>Comparison of TTS with <b>Next-Token Prediction (NTP)</b> and <b>Multi-Token Prediction (MTP)</b> on SLMs trained with decoupled tokenizers* w/ and w/o <b>Speaker-Aware TTS</b> </p> -->
+	<p>Comparing <b>Next-Token Prediction (NTP)</b> and <b>Multi-Token Prediction (MTP)</b> for TTS on SLMs using decoupled tokenizers*, w/ and w/o <b>Speaker-Aware</b> paradigm.</p>
 
 	<!-- <div class="legend-container">
             <div class="legend-item">
@@ -571,7 +558,7 @@ heads, generating multiple tokens in parallel.
 
 				<tr style="background-color: #ffebee;">
 					<td style="vertical-align : middle;text-align: center;" class="spk-aware-content tok-s">Bad case</td>
-					<td style="vertical-align : middle;text-align: center;" class="spk-aware-content">The other is a mythological subject of deeper meaning, the death of Procris.</td>
+					<td style="vertical-align : middle;text-align: center;" class="spk-aware-content">Sheriff Jones made several visits unmolested on their part, and without any display of writs or demand for the surrender of alleged offenders on his own.</td>
 					<td style="vertical-align : middle;text-align: center;" class="spk-aware-content tok-s">
 						<audio controls src="audios/ntp-mtp-spk-aware/ref/case-bad.wav" style="width: 250px;"></audio>
 					</td>
@@ -579,55 +566,55 @@ heads, generating multiple tokens in parallel.
 						<audio controls src="audios/ntp-mtp-spk-aware/no-spk-aware/ntp/case-bad.wav" style="width: 250px;"></audio>
 						<br/>
 						<!-- WER: 7.59&emsp;UTMOS: 4.36<br/>SIM: 0.45 -->
-						<span style="font-size: 15px;">WER: 0.0&nbsp;UTMOS: 4.12&nbsp;SIM: 0.60</span>
+						<span style="font-size: 15px;">WER: 15.3&nbsp;UTMOS: 4.32&nbsp;SIM: 0.32</span>
 					</td>
 					<td style="vertical-align : middle;text-align: center;" class="spk-aware-content tok-s">
 						<audio controls src="audios/ntp-mtp-spk-aware/spk-aware/ntp/case-bad.wav" style="width: 250px;"></audio>
 						<br/>
 						<!-- WER: 0.0&emsp;UTMOS: 4.39<br/>SIM: 0.61 -->
-						<span style="font-size: 15px;">WER: 0.0&nbsp;UTMOS: 4.12&nbsp;SIM: 0.60</span>
+						<span style="font-size: 15px;">WER: 15.3&nbsp;UTMOS: 3.75&nbsp;SIM: 0.53</span>
 					</td>
 					<td style="vertical-align : middle;text-align: center;" class="spk-aware-content">
 						<audio controls src="audios/ntp-mtp-spk-aware/no-spk-aware/mtp-3/case-bad.wav" style="width: 250px;"></audio>
 						<br/>
 						<!-- WER: 0.0&emsp;UTMOS: 4.44<br/>SIM: 0.44 -->
-						<span style="font-size: 15px;">WER: 0.0&nbsp;UTMOS: 4.12&nbsp;SIM: 0.60</span>
+						<span style="font-size: 15px;">WER: 26.9&nbsp;UTMOS: 4.04&nbsp;SIM: 0.28</span>
 					</td>
 					<td style="vertical-align : middle;text-align: center;" class="spk-aware-content tok-s">
 						<audio controls src="audios/ntp-mtp-spk-aware/spk-aware/mtp-3/case-bad.wav" style="width: 250px;"></audio>
 						<br/>
 						<!-- WER: 0.0&emsp;UTMOS: 4.38<br/>SIM: 0.57 -->
-						<span style="font-size: 15px;">WER: 0.0&nbsp;UTMOS: 4.12&nbsp;SIM: 0.60</span>
+						<span style="font-size: 15px;">WER: 23.1&nbsp;UTMOS: 3.73&nbsp;SIM: 0.55</span>
 					</td>
 					<td style="vertical-align : middle;text-align: center;" class="spk-aware-content">
 						<audio controls src="audios/ntp-mtp-spk-aware/no-spk-aware/mtp-6/case-bad.wav" style="width: 250px;"></audio>
 						<br/>
 						<!-- WER: 0.0&emsp;UTMOS: 4.01<br/>SIM: 0.55 -->
-						<span style="font-size: 15px;">WER: 0.0&nbsp;UTMOS: 4.12&nbsp;SIM: 0.60</span>
+						<span style="font-size: 15px;">WER: 0.0&nbsp;UTMOS: 3.66&nbsp;SIM: 0.45</span>
 					</td>
 					<td style="vertical-align : middle;text-align: center;" class="spk-aware-content tok-s">
 						<audio controls src="audios/ntp-mtp-spk-aware/spk-aware/mtp-6/case-bad.wav" style="width: 250px;"></audio>
 						<br/>
 						<!-- WER: 0.0&emsp;UTMOS: 4.37<br/>SIM: 0.62 -->
-						<span style="font-size: 15px;">WER: 0.0&nbsp;UTMOS: 4.12&nbsp;SIM: 0.60</span>
+						<span style="font-size: 15px;">WER: 7.69&nbsp;UTMOS: 3.87&nbsp;SIM: 0.45</span>
 					</td>
 					<td style="vertical-align : middle;text-align: center;" class="spk-aware-content">
 						<audio controls src="audios/ntp-mtp-spk-aware/no-spk-aware/mtp-12/case-bad.wav" style="width: 250px;"></audio>
 						<br/>
 						<!-- WER: 0.0&emsp;UTMOS: 3.62<br/>SIM: 0.54 -->
-						<span style="font-size: 15px;">WER: 0.0&nbsp;UTMOS: 4.12&nbsp;SIM: 0.60</span>
+						<span style="font-size: 15px;">WER: 3.84&nbsp;UTMOS: 3.62&nbsp;SIM: 0.50</span>
 					</td>
 					<td style="vertical-align : middle;text-align: center;" class="spk-aware-content">
 						<audio controls src="audios/ntp-mtp-spk-aware/spk-aware/mtp-12/case-bad.wav" style="width: 250px;"></audio>
 						<br/>
 						<!-- WER: 0.0&emsp;UTMOS: 4.24<br/>SIM: 0.61 -->
-						<span style="font-size: 15px;">WER: 0.0&nbsp;UTMOS: 4.12&nbsp;SIM: 0.60</span>
+						<span style="font-size: 15px;">WER: 0.0&nbsp;UTMOS: 4.23&nbsp;SIM: 0.64</span>
 					</td>
 				</tr>
 			</table>
 		
 	</div>
-	* We chose FACodec as a decoupled tokenizer to conduct experiments on different settings above
+	<p style="font-size: small;">* We chose FACodec as a decoupled tokenizer to conduct experiments on different settings above.</p>
 
 	
 </div>
@@ -635,8 +622,8 @@ heads, generating multiple tokens in parallel.
 
 <div class="container pt-5 mt-5 shadow-lg p-5 mb-5 bg-white rounded">
 	<h2 id="role-play" style="text-align: center;">Role-Playing Knowledge QA</h2>
-	<p>Comparison of SLMs with Top-3 Coupled, Semi-Decoupled and Decoupled speech tokenizers on <b>Role-Playing Knowledge QA</b> task</p>
-	<p>Roles are selected from <a href="https://en.wikipedia.org/wiki/Genshin_Impact"><i>Genshin Impact</i></a></p>
+	<p>Comparison of SLMs with Top-3 Coupled, Semi-Decoupled and Decoupled speech tokenizers on <b>Role-Playing Knowledge QA</b> task.</p>
+	<p>Roles are selected from <a href="https://en.wikipedia.org/wiki/Genshin_Impact"><i>Genshin Impact</i></a>.</p>
 	<!-- <div class="legend-container">
             <div class="legend-item">
                 <div class="legend-box" style="background-color: #e8f5e9;"></div>
@@ -666,8 +653,8 @@ heads, generating multiple tokens in parallel.
 				<thead>
 					<tr class="header-row">
 						<th style="vertical-align : middle;text-align: center;" class="role-play tok-s"></th>
-						<th style="vertical-align : middle;text-align: center;" class="role-play tok-s">Query Type</th>
-						<th style="vertical-align : middle;text-align: center;" class="role-play">Query</th>
+						<th style="vertical-align : middle;text-align: center;" class="role-play tok-s">Sample Type</th>
+						<th style="vertical-align : middle;text-align: center;" class="role-play">Question</th>
 						<th style="vertical-align : middle;text-align: center;" class="role-play tok-s">Ground<br/>Truth</th>
 						<!-- <th style="vertical-align : middle;text-align: center;" class="role-play">Reference<br/>Speech</th> -->
 						 <th style="vertical-align : middle;text-align: center;" class="role-play tok-s">Prompt</th>
@@ -680,7 +667,7 @@ heads, generating multiple tokens in parallel.
 				</thead>
 				<tr style="background-color: #e8f5e9;">
 					<td style="vertical-align : middle;text-align: center;" class="spk-aware-content tok-s" rowspan="4">Good cases</td>
-					<td style="vertical-align : middle;text-align: center;" class="role-play tok-s">In-Domain Query<br/>&<br/>Seen role</td>
+					<td style="vertical-align : middle;text-align: center;" class="role-play tok-s">In-Domain Question<br/>&<br/>Seen role</td>
 					<td style="vertical-align : middle;text-align: center;" class="role-play">How many imperial gallons are in a firkin?</td>
 					<td style="vertical-align : middle;text-align: center;" class="role-play tok-s">The answer is <b>9</b></td>
 					<td style="vertical-align : middle;text-align: center;" class="role-play tok-s">
@@ -689,36 +676,56 @@ heads, generating multiple tokens in parallel.
 						Role: Xiao
 					</td>
 					<td style="vertical-align : middle;text-align: center;" class="role-play tok-s">
+						<span><b>Text answer</b></span>
+						<br>
 						<span>The answer is</span>
 						<span style="color: #099715;"><b>nine*</b></span>
+						<br/><br/>
+						<span><b>Speech answer</b></span>
 						<audio controls src="audios/role-play/facodec/case-1.wav" style="width: 250px;"></audio>
 						<br/>
 						SIM: 0.75
 					</td>
 					<td style="vertical-align : middle;text-align: center;" class="role-play tok-s">
+						<span><b>Text answer</b></span>
+						<br>
 						<span>The answer is</span>
 						<span style="color: #bd1a32;"><b>one hundred**</b></span>
+						<br/><br/>
+						<span><b>Speech answer</b></span>
 						<audio controls src="audios/role-play/spt/case-1.wav" style="width: 250px;"></audio>
 						<br/>
 						SIM: 0.13
 					</td>
 					<td style="vertical-align : middle;text-align: center;" class="role-play">
+						<span><b>Text answer</b></span>
+						<br>
 						<span>The answer is</span>
 						<span style="color: #bd1a32;"><b>four</b></span>
+						<br/><br/>
+						<span><b>Speech answer</b></span>
 						<audio controls src="audios/role-play/wavtok-v2/case-1.wav" style="width: 250px;"></audio>
 						<br/>
 						SIM: 0.49
 					</td>
 					<td style="vertical-align : middle;text-align: center;" class="role-play">
-						<span>The answer is</span> 
+						<span><b>Text answer</b></span>
+						<br>
+						<span>The answer is</span>
 						<span style="color: #bd1a32;"><b>five</b></span>
+						<br/><br/>
+						<span><b>Speech answer</b></span>
 						<audio controls src="audios/role-play/bigcodec/case-1.wav" style="width: 250px;"></audio>
 						<br/>
 						SIM: 0.21
 					</td>
 					<td style="vertical-align : middle;text-align: center;" class="role-play">
+						<span><b>Text answer</b></span>
+						<br>
 						<span>The answer is</span>
 						<span style="color: #bd1a32;"><b>two</b></span>
+						<br><br>
+						<span><b>Speech answer</b></span>
 						<audio controls src="audios/role-play/stablecodec/case-1.wav" style="width: 250px;"></audio>
 						<br/>
 						SIM: 0.27
@@ -726,7 +733,7 @@ heads, generating multiple tokens in parallel.
 				</tr>
 
 				<tr style="background-color: #e8f5e9;">
-					<td style="vertical-align : middle;text-align: center;" class="role-play tok-s">Out-of-Domain Query<br/>&<br/>Seen role</td>
+					<td style="vertical-align : middle;text-align: center;" class="role-play tok-s">Out-of-Domain Question<br/>&<br/>Seen role</td>
 					<td style="vertical-align : middle;text-align: center;" class="role-play">What style of art did Henri Matisse do?</td>
 					<td style="vertical-align : middle;text-align: center;" class="role-play tok-s">The answer is <b>impressionism</b></td>
 					<td style="vertical-align : middle;text-align: center;" class="role-play tok-s">
@@ -735,41 +742,57 @@ heads, generating multiple tokens in parallel.
 						Role: Arataki Itto
 					</td>
 					<td style="vertical-align : middle;text-align: center;" class="role-play tok-s">
-						<span>The answer is</span> 
+						<span><b>Text answer</b></span>
+						<br>
+						<span>The answer is</span>
 						<span style="color: #099715;"><b>impressionism</b></span>
+						<br><br>
+						<span><b>Speech answer</b></span>
 						<audio controls src="audios/role-play/facodec/case-2.wav" style="width: 250px;"></audio>
 						<br/>
 						SIM: 0.75
 					</td>
 					<td style="vertical-align: middle; text-align: center;" class="role-play tok-s">
+						<span><b>Text answer</b></span>
+						<br>
 						<span>The answer is</span>
-						<div style="display: flex; justify-content: center; align-items: baseline; gap: 5px; margin: 3px 0;">
-							<span style="color: #b7bc23; font-weight: bold;">impressionism in media***</span>
-						</div>
+						<span style="color: #b7bc23; font-weight: bold;">impressionism in media***</span>
+						<br><br>
+						<span><b>Speech answer</b></span>
 						<audio controls src="audios/role-play/spt/case-2.wav" style="width: 250px;"></audio>
 						<br/>
 						SIM: 0.12
 					</td>
 					
 					<td style="vertical-align : middle;text-align: center;" class="role-play">
-						<span>The answer is</span> 
+						<span><b>Text answer</b></span>
+						<br>
+						<span>The answer is</span>
 						<span style="color: #bd1a32; font-weight: bold;">fauvisme</span>
+						<br><br>
+						<span><b>Speech answer</b></span>
 						<audio controls src="audios/role-play/wavtok-v2/case-2.wav" style="width: 250px;"></audio>
 						<br/>
 						SIM: 0.22
 					</td>
 					<td style="vertical-align : middle;text-align: center;" class="role-play">
-						<span>The answer is</span> 
-						<div style="display: flex; justify-content: center; align-items: baseline; gap: 5px; margin: 3px 0;">
-							<span style="color: #b7bc23; font-weight: bold;"> impressionism in sculpture</span>
-						</div>
+						<span><b>Text answer</b></span>
+						<br>
+						<span>The answer is</span>
+						<span style="color: #b7bc23; font-weight: bold;"> impressionism in sculpture</span>
+						<br><br>
+						<span><b>Speech answer</b></span>
 						<audio controls src="audios/role-play/bigcodec/case-2.wav" style="width: 250px;"></audio>
 						<br/>
 						SIM: 0.23
 					</td>
 					<td style="vertical-align : middle;text-align: center;" class="role-play">
-						<span>The answer is</span> 
+						<span><b>Text answer</b></span>
+						<br>
+						<span>The answer is</span>
 						<span style="color: #bd1a32; font-weight: bold;">impressionist</span>
+						<br><br>
+						<span><b>Speech answer</b></span>
 						<audio controls src="audios/role-play/bigcodec/case-2.wav" style="width: 250px;"></audio>
 						<br/>
 						SIM: 0.07
@@ -777,7 +800,7 @@ heads, generating multiple tokens in parallel.
 				</tr>
 
 				<tr style="background-color: #e8f5e9;">
-					<td style="vertical-align : middle;text-align: center;" class="role-play tok-s">In-Domain Query<br/>&<br/>Unseen role</td>
+					<td style="vertical-align : middle;text-align: center;" class="role-play tok-s">In-Domain Question<br/>&<br/>Unseen role</td>
 					<td style="vertical-align : middle;text-align: center;" class="role-play">Which golf shot is the opposite of a slice?</td>
 					<td style="vertical-align : middle;text-align: center;" class="role-play tok-s">The answer is <b>hook</b></td>
 					<td style="vertical-align : middle;text-align: center;" class="role-play tok-s">
@@ -786,36 +809,56 @@ heads, generating multiple tokens in parallel.
 						Role: Eula
 					</td>
 					<td style="vertical-align : middle;text-align: center;" class="role-play tok-s">
-						<span>The answer is</span> 
+						<span><b>Text answer</b></span>
+						<br>
+						<span>The answer is</span>
 						<span style="color: #099715;"><b>hook</b></span>
+						<br><br>
+						<span><b>Speech answer</b></span>
 						<audio controls src="audios/role-play/facodec/case-3.wav" style="width: 250px;"></audio>
 						<br/>
 						SIM: 0.71
 					</td>
 					<td style="vertical-align : middle;text-align: center;" class="role-play tok-s">
-						<span>The answer is</span> 
+						<span><b>Text answer</b></span>
+						<br>
+						<span>The answer is</span>
 						<span style="color: #bd1a32;"><b>morris</b></span>
+						<br><br>
+						<span><b>Speech answer</b></span>
 						<audio controls src="audios/role-play/spt/case-3.wav" style="width: 250px;"></audio>
 						<br/>
 						SIM: -0.02
 					</td>
 					<td style="vertical-align : middle;text-align: center;" class="role-play">
-						<span>The answer is</span> 
+						<span><b>Text answer</b></span>
+						<br>
+						<span>The answer is</span>
 						<span style="color: #bd1a32;"><b>condor yacht</b></span>
+						<br><br>
+						<span><b>Speech answer</b></span>
 						<audio controls src="audios/role-play/wavtok-v2/case-3.wav" style="width: 250px;"></audio>
 						<br/>
 						SIM: 0.21
 					</td>
 					<td style="vertical-align : middle;text-align: center;" class="role-play">
-						<span>The answer is</span> 
+						<span><b>Text answer</b></span>
+						<br>
+						<span>The answer is</span>
 						<span style="color: #bd1a32;"><b>tiddliwinks</b></span>
+						<br><br>
+						<span><b>Speech answer</b></span>
 						<audio controls src="audios/role-play/bigcodec/case-3.wav" style="width: 250px;"></audio>
 						<br/>
 						SIM: 0.35
 					</td>
 					<td style="vertical-align : middle;text-align: center;" class="role-play">
-						<span>The answer is</span> 
+						<span><b>Text answer</b></span>
+						<br>
+						<span>The answer is</span>
 						<span style="color: #bd1a32;"><b>cutty sall</b></span>
+						<br><br>
+						<span><b>Speech answer</b></span>
 						<audio controls src="audios/role-play/stablecodec/case-3.wav" style="width: 250px;"></audio>
 						<br/>
 						SIM: 0.23
@@ -823,7 +866,7 @@ heads, generating multiple tokens in parallel.
 				</tr>
 
 				<tr style="background-color: #e8f5e9;">
-					<td style="vertical-align : middle;text-align: center;" class="role-play tok-s">Out-of-Domain Query<br/>&<br/>Unseen role</td>
+					<td style="vertical-align : middle;text-align: center;" class="role-play tok-s">Out-of-Domain Question<br/>&<br/>Unseen role</td>
 					<td style="vertical-align : middle;text-align: center;" class="role-play">What is the largest city in Spain?</td>
 					<td style="vertical-align : middle;text-align: center;" class="role-play tok-s">The answer is <b>Madrid</b></td>
 					<td style="vertical-align : middle;text-align: center;" class="role-play tok-s">
@@ -832,36 +875,56 @@ heads, generating multiple tokens in parallel.
 						Role: Jean
 					</td>
 					<td style="vertical-align : middle;text-align: center;" class="role-play tok-s">
-						<span>The answer is</span> 
+						<span><b>Text answer</b></span>
+						<br>
+						<span>The answer is</span>
 						<span style="color: #099715;"><b>madrid</b></span>
+						<br><br>
+						<span><b>Speech answer</b></span>
 						<audio controls src="audios/role-play/facodec/case-4.wav" style="width: 250px;"></audio>
 						<br/>
 						SIM: 0.60
 					</td>
 					<td style="vertical-align : middle;text-align: center;" class="role-play tok-s">
-						<span>The answer is</span> 
+						<span><b>Text answer</b></span>
+						<br>
+						<span>The answer is</span>
 						<span style="color: #bd1a32;"><b>jorvili</b></span>
+						<br><br>
+						<span><b>Speech answer</b></span>
 						<audio controls src="audios/role-play/spt/case-4.wav" style="width: 250px;"></audio>
 						<br/>
 						SIM: 0.10
 					</td>
 					<td style="vertical-align : middle;text-align: center;" class="role-play">
-						<span>The answer is</span> 
+						<span><b>Text answer</b></span>
+						<br>
+						<span>The answer is</span>
 						<span style="color: #bd1a32;"><b>un locode itvce</b></span>
+						<br><br>
+						<span><b>Speech answer</b></span>
 						<audio controls src="audios/role-play/wavtok-v2/case-4.wav" style="width: 250px;"></audio>
 						<br/>
 						SIM: 0.19
 					</td>
 					<td style="vertical-align : middle;text-align: center;" class="role-play">
-						<span>The answer is</span> 
+						<span><b>Text answer</b></span>
+						<br>
+						<span>The answer is</span>
 						<span style="color: #bd1a32;"><b>castro</b></span>
+						<br><br>
+						<span><b>Speech answer</b></span>
 						<audio controls src="audios/role-play/bigcodec/case-4.wav" style="width: 250px;"></audio>
 						<br/>
 						SIM: 0.07
 					</td>
 					<td style="vertical-align : middle;text-align: center;" class="role-play">
-						<span>The answer is</span> 
+						<span><b>Text answer</b></span>
+						<br>
+						<span>The answer is</span>
 						<span style="color: #bd1a32;"><b>un locode dehaj</b></span>
+						<br><br>
+						<span><b>Speech answer</b></span>
 						<audio controls src="audios/role-play/stablecodec/case-4.wav" style="width: 250px;"></audio>
 						<br/>
 						SIM: 0.19
@@ -870,48 +933,69 @@ heads, generating multiple tokens in parallel.
 
 				<tr style="background-color: #ffebee;">
 					<td style="vertical-align : middle;text-align: center;" class="spk-aware-content tok-s">Bad case</td>
-					<td style="vertical-align : middle;text-align: center;" class="role-play tok-s">Out-of-Domain Query<br/>&<br/>Seen role</td>
-					<td style="vertical-align : middle;text-align: center;" class="role-play">Where was John Jay born? </td>
-					<td style="vertical-align : middle;text-align: center;" class="role-play tok-s">The answer is <b>New York City</b></td>
+					<td style="vertical-align : middle;text-align: center;" class="role-play tok-s">In-Domain Question<br/>&<br/>Unseen role</td>
+					<td style="vertical-align : middle;text-align: center;" class="role-play">Satya Nadella, boss of which vast corporation, apologised in 2014 for suggesting female workers should rely on faith and karma instead of asking for a pay rise?</td>
+					<td style="vertical-align : middle;text-align: center;" class="role-play tok-s">The answer is <b>Microsoft</b></td>
 					<td style="vertical-align : middle;text-align: center;" class="role-play tok-s">
 						<audio controls src="audios/role-play/ref/case-bad.wav" style="width: 250px;"></audio>
 						<br/>
-						Role: Venti
+						Role: Albedo
 					</td>
 					<td style="vertical-align : middle;text-align: center;" class="role-play tok-s">
-						<span>The answer is</span> 
-						<span style="color: #099715;"><b>new york city</b></span>
+
+						<span><b>Text answer</b></span>
+						<br>
+						<span>The answer is</span>
+						<span style="color: #099715;"><b>microsoft</b></span>
+						<br><br>
+						<span><b>Speech answer</b></span>
 						<audio controls src="audios/role-play/facodec/case-bad.wav" style="width: 250px;"></audio>
 						<br/>
-						SIM: 0.48
+						SIM: 0.57
 					</td>
 					<td style="vertical-align : middle;text-align: center;" class="role-play tok-s">
-						<span>The answer is</span> 
-						<span style="color: #bd1a32;"><b>united states government</b></span>
+						<span><b>Text answer</b></span>
+						<br>
+						<span>The answer is</span>
+						<span style="color: #b7bc23;"><b>microsoft inc</b></span>
+						<br><br>
+						<span><b>Speech answer</b></span>
 						<audio controls src="audios/role-play/spt/case-bad.wav" style="width: 250px;"></audio>
 						<br/>
-						SIM: 0.38
+						SIM: -0.05
 					</td>
 					<td style="vertical-align : middle;text-align: center;" class="role-play">
-						<span>The answer is</span> 
-						<span style="color: #b7bc23;"><b>new york state</b></span>
+						<span><b>Text answer</b></span>
+						<br>
+						<span>The answer is</span>
+						<span style="color: #bd1a32;"><b>reds</b></span>
+						<br><br>
+						<span><b>Speech answer</b></span>
 						<audio controls src="audios/role-play/wavtok-v2/case-bad.wav" style="width: 250px;"></audio>
 						<br/>
-						SIM: 0.18
+						SIM: 0.08
 					</td>
 					<td style="vertical-align : middle;text-align: center;" class="role-play">
-						<span>The answer is</span> 
-						<span style="color: #b7bc23;"><b>new york population</b></span>
+						<span><b>Text answer</b></span>
+						<br>
+						<span>The answer is</span>
+						<span style="color: #bd1a32"><b>nike</b></span>
+						<br><br>
+						<span><b>Speech answer</b></span>
 						<audio controls src="audios/role-play/bigcodec/case-bad.wav" style="width: 250px;"></audio>
 						<br/>
-						SIM: 0.30
+						SIM: -0.03
 					</td>
 					<td style="vertical-align : middle;text-align: center;" class="role-play">
-						<span>The answer is</span> 
-						<span style="color: #bd1a32;"><b>philadelphia</b></span>
+						<span><b>Text answer</b></span>
+						<br>
+						<span>The answer is</span>
+						<span style="color: #bd1a32;"><b>nikkei</b></span>
+						<br><br>
+						<span><b>Speech answer</b></span>
 						<audio controls src="audios/role-play/stablecodec/case-bad.wav" style="width: 250px;"></audio>
 						<br/>
-						SIM: 0.05
+						SIM: 0.30
 					</td>
 				</tr>
 			</table>
@@ -919,9 +1003,11 @@ heads, generating multiple tokens in parallel.
 			</div>
 		</div>
 
-		<p style="color: #099715; font-size: small;">*&nbsp; <b>Correct answer</b></p>
-		<p style="color: #bd1a32; font-size: small;">**&nbsp; <b>Wrong answer</b></p>
-		<p style="color: #b7bc23; font-size: small;">***&nbsp; <b>Partially correct answer</b></p>
+		<span style="color: #099715; font-size: small;">*&nbsp;<b>Correct answer</b></span>
+		<br>
+		<span style="color: #bd1a32; font-size: small;">**&nbsp;<b>Wrong answer</b></span>
+		<br>
+		<span style="color: #b7bc23; font-size: small;">***&nbsp;<b>Partially correct answer</b></span>
 
 		</div>
 
