@@ -27,18 +27,17 @@
 
 <div class="container pt-5 mt-5 shadow-lg p-5 mb-5 bg-white rounded">
 	<div class="text-center">
-      <h3>Speech-Language Models with Decoupled Tokenizers and
-Multi-Token Prediction</h3>
+      <h3>What Makes a Good Speech Tokenizer for LLM-Centric Speech Generation? A Systematic Study</h3>
 		<h5><i>Anonymous Authors</i></h5>
 	</div>
-	<p><b>Abstract</b> Speech-language models (SLMs) offer a promising path toward unifying speech and text understanding and generation.
-However, challenges remain in achieving effective cross-modal alignment and high-quality speech generation. 
-In this work, we systematically investigate the impact of key components (i.e., speech tokenizers, speech heads, and speaker modeling) on the performance of LLM-centric SLMs.
-We compare coupled, semi-decoupled, and fully decoupled speech tokenizers under a fair SLM framework and find that decoupled tokenization significantly improves alignment and synthesis quality.
-To address the information density mismatch between speech and text, we introduce multi-token prediction (MTP) into SLMs, enabling each hidden state to decode multiple speech tokens.
-This leads to up to <b>12× faster</b> decoding and a substantial <b>drop in Word Error Rate (from 6.07 to 3.01)</b>. 
-Furthermore, we propose a speaker-aware generation paradigm and introduce RoleTriviaQA, a large-scale role-playing knowledge QA benchmark with diverse speaker identities. 
-Experiments demonstrate that our methods enhance both knowledge understanding and speaker consistency. 
+	<p><b>Abstract</b>  Speech-language models (SLMs) offer a promising path toward unifying speech and text understanding and generation.
+		However, challenges remain in achieving effective cross-modal alignment and high-quality speech generation. 
+		In this work, we systematically investigate the role of speech tokenizer designs in LLM-centric SLMs, augmented by speech heads and speaker modeling.
+		We compare coupled, semi-decoupled, and fully decoupled speech tokenizers under a fair SLM framework and find that decoupled tokenization significantly improves alignment and synthesis quality.
+		To address the information density mismatch between speech and text, we introduce multi-token prediction (MTP) into SLMs, enabling each hidden state to decode multiple speech tokens.
+		This leads to up to 12× faster decoding and a substantial drop in word error rate (from 6.07 to 3.01). 
+		Furthermore, we propose a speaker-aware generation paradigm and introduce RoleTriviaQA, a large-scale role-playing knowledge QA benchmark with diverse speaker identities. 
+		Experiments demonstrate that our methods enhance both knowledge understanding and speaker consistency.
 	</p>
 
 	<p>
